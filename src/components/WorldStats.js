@@ -37,7 +37,7 @@ const WorldStats = () => {
       {loading && !error && (
         <div className="preloader-img-container">
           <img
-            src="preloader-corona.gif"
+            src="preloader.gif"
             className="preloader-img"
             alt="preloader-corona"
           ></img>
