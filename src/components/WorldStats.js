@@ -30,6 +30,9 @@ const WorldStats = () => {
 
   return (
     <section className="world-stats section">
+      <div className="corona-img-container">
+        <img src="corona.png" alt="corona" className="corona-img" />
+      </div>
       <h1 className="section-title">COVID-19 Live Stats</h1>
       {loading && !error && <h1 className="section-title">loading...</h1>}
 

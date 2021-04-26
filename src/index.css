@@ -43,6 +43,16 @@ img {
 }
 
 /* WorldStats Component */
+.corona-img-container {
+  display: grid;
+  place-items: center;
+}
+
+.corona-img {
+  width: 10rem;
+  height: 10rem;
+}
+
 .world-stats-center {
   display: grid;
   gap: 2rem;
