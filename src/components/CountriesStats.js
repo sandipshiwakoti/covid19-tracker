@@ -53,9 +53,17 @@ const CountriesStats = () => {
         />
       </form>
 
-      {loading && !error && <h1 className="section-title">loading...</h1>}
+      {loading && !error && (
+        <div className="preloader-img-container">
+          <img
+            src="preloader-corona.gif"
+            className="preloader-img"
+            alt="preloader-corona"
+          ></img>
+        </div>
+      )}
 
-      {!loading && error && <h1 className="section-title">not found...</h1>}
+      {!loading && error && <h1 className="section-title">not found</h1>}
 
       {!loading && !error && (
         <div className="countries-stats-center section-center">

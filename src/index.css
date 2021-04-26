@@ -43,7 +43,8 @@ img {
 }
 
 /* WorldStats Component */
-.corona-img-container {
+.corona-img-container,
+.preloader-img-container {
   display: grid;
   place-items: center;
 }
@@ -51,6 +52,11 @@ img {
 .corona-img {
   width: 10rem;
   height: 10rem;
+}
+
+.preloader-img {
+  width: 5rem;
+  height: 5rem;
 }
 
 .world-stats-center {

@@ -34,7 +34,15 @@ const WorldStats = () => {
         <img src="corona.png" alt="corona" className="corona-img" />
       </div>
       <h1 className="section-title">COVID-19 Live Stats</h1>
-      {loading && !error && <h1 className="section-title">loading...</h1>}
+      {loading && !error && (
+        <div className="preloader-img-container">
+          <img
+            src="preloader-corona.gif"
+            className="preloader-img"
+            alt="preloader-corona"
+          ></img>
+        </div>
+      )}
 
       {!loading && error && <h1 className="section-title">not found</h1>}
 
