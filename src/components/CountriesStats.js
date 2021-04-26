@@ -42,7 +42,7 @@ const CountriesStats = () => {
 
   return (
     <section className="countries-stats section">
-      <form className="form-search">
+      <form className="form-search" onSubmit={(e) => e.preventDefault()}>
         <input
           type="text"
           name="input-country"
