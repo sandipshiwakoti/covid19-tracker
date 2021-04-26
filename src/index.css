@@ -1,13 +1,170 @@
-body {
+/* google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap");
+
+/* Resets */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* body */
+body {
+  font-family: "Oswald", sans-serif;
+}
+
+/* Global styles */
+.section {
+  padding: 2rem 0;
+}
+
+.section-center {
+  width: 85vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  object-fit: contain;
+}
+
+/* WorldStats Component */
+.world-stats-center {
+  display: grid;
+  gap: 2rem;
+}
+
+.world-card {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  background-color: rgb(93, 47, 119);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  color: white;
+}
+
+.world-card > h3 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+}
+
+.world-card > span {
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+}
+
+.world-card > p {
+  letter-spacing: 0.05rem;
+}
+
+.world-card.info {
+  background-color: #09aeae;
+}
+
+.world-card.danger {
+  background-color: #a8240a;
+}
+
+.world-card.warning {
+  background-color: #cca91b;
+}
+
+.world-card.success {
+  background-color: #1fae51;
+}
+
+/* Responsive Design for WorldStats Component */
+@media screen and (min-width: 768px) {
+  .world-stats-center {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 972px) {
+  .world-stats-center {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* CountriesStats Component */
+.form-search {
+  text-align: center;
+}
+
+#input-country {
+  width: 85vw;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.countries-stats-center {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr; */
+  gap: 2rem;
+}
+
+.country-card {
+  background-color: #343a40;
+  border-radius: 0.5rem;
+  text-align: center;
+  color: white;
+  display: grid;
+  gap: 0.5rem;
+  padding: 1.5rem 0;
+}
+
+.country-card > h3 {
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.flag-img-container {
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.country-card > p {
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+.flag-img {
+  width: 100%;
+  height: 5rem;
+}
+
+/* Responsive Design for CountriesStats Component */
+@media screen and (min-width: 568px) {
+  .countries-stats-center {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 972px) {
+  .countries-stats-center {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
