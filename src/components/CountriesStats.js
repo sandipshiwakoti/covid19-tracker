@@ -15,18 +15,19 @@ const CountriesStats = () => {
     else url = urlAll;
     try {
       const response = await fetch(url);
-      const data = await response.json();
-      if (data.message) {
-        setError(true);
-      } else if (!Array.isArray(data)) {
-        setStats([data]);
-        setError(false);
-      } else {
-        setStats(data);
-        setError(false);
-      }
-      setLoading(false);
+      if (response.status === 200) {
+        const data = await response.json();
+        if (!Array.isArray(data)) {
+          setStats([data]);
+          setError(false);
+        } else {
+          setStats(data);
+          setError(false);
+        }
+        setLoading(false);
+      } else throw new Error("Data Not Found 😞");
     } catch (err) {
+      console.log(err);
       setLoading(false);
       setError(true);
     }
