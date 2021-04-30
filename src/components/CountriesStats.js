@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
+import NumberFormat from "react-number-format";
+
 const urlAll = "https://corona.lmao.ninja/v2/countries?sort=cases";
 const baseUrlSingle = "https://corona.lmao.ninja/v2/countries/";
 
@@ -92,35 +94,67 @@ const CountriesStats = () => {
                   <div className="covid-info">
                     <div>
                       <p>Today's Cases</p>
-                      <p>{todayCases}</p>
+                      <NumberFormat
+                        value={todayCases}
+                        displayType="text"
+                        thousandSeparator=","
+                      />
                     </div>
                     <div>
                       <p>Total Cases</p>
-                      <p>{cases}</p>
+                      <NumberFormat
+                        value={cases}
+                        displayType="text"
+                        thousandSeparator=","
+                      />
                     </div>
                     <div>
                       <p>Today's Deaths</p>
-                      <p>{todayDeaths}</p>
+                      <NumberFormat
+                        value={todayDeaths}
+                        displayType="text"
+                        thousandSeparator=","
+                      />
                     </div>
                     <div>
                       <p>Total Deaths</p>
-                      <p>{deaths}</p>
+                      <NumberFormat
+                        value={deaths}
+                        displayType="text"
+                        thousandSeparator=","
+                      />
                     </div>
                     <div>
                       <p>Today's Recovered</p>
-                      <p>{todayRecovered}</p>
+                      <NumberFormat
+                        value={todayRecovered}
+                        displayType="text"
+                        thousandSeparator=","
+                      />
                     </div>
                     <div>
                       <p>Total Recovered</p>
-                      <p>{recovered}</p>
+                      <NumberFormat
+                        value={recovered}
+                        displayType="text"
+                        thousandSeparator=","
+                      />
                     </div>
                     <div>
                       <p>Active</p>
-                      <p>{active}</p>
+                      <NumberFormat
+                        value={active}
+                        displayType="text"
+                        thousandSeparator=","
+                      />
                     </div>
                     <div>
                       <p>Critical</p>
-                      <p>{critical}</p>
+                      <NumberFormat
+                        value={critical}
+                        displayType="text"
+                        thousandSeparator=","
+                      />
                     </div>
                   </div>
                 </article>

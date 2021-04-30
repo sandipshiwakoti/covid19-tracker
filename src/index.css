@@ -198,12 +198,13 @@ img {
   gap: 0.5rem;
 }
 
-.covid-info > div > p:first-child {
+.covid-info > div > p {
   font-weight: 450;
 }
 
-.covid-info > div > p:nth-child(2) {
+.covid-info > div > span {
   letter-spacing: 0.1rem;
+  color: #172020;
 }
 
 /* Responsive Design for CountriesStats Component */
