@@ -143,6 +143,18 @@ img {
   font-weight: 500;
 }
 
+.btn-search {
+  font-size: 2.2;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.btn-search:hover {
+  background-color: #09aeae;
+}
+
 .countries-stats-center {
   display: grid;
   /* grid-template-columns: 1fr 1fr; */
@@ -150,13 +162,14 @@ img {
 }
 
 .country-card {
-  background-color: #343a40;
+  background-color: white;
   border-radius: 0.5rem;
   text-align: center;
-  color: white;
+  color: black;
   display: grid;
   gap: 0.5rem;
   padding: 1.5rem 0;
+  box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgba(0, 0, 0, 0.7);
 }
 
 .country-card > h3 {
@@ -179,8 +192,22 @@ img {
   height: 5rem;
 }
 
+.covid-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.covid-info > div > p:first-child {
+  font-weight: 450;
+}
+
+.covid-info > div > p:nth-child(2) {
+  letter-spacing: 0.1rem;
+}
+
 /* Responsive Design for CountriesStats Component */
-@media screen and (min-width: 568px) {
+@media screen and (min-width: 672px) {
   .countries-stats-center {
     grid-template-columns: repeat(2, 1fr);
   }

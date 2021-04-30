@@ -89,14 +89,40 @@ const CountriesStats = () => {
                   <div className="flag-img-container">
                     <img src={flag} alt={country} className="flag-img" />
                   </div>
-                  <p>Total Cases: {cases}</p>
-                  <p>Today's Cases: {todayCases}</p>
-                  <p>Deaths: {deaths}</p>
-                  <p>Todays Deaths: {todayDeaths}</p>
-                  <p>Total Recovered: {recovered}</p>
-                  <p>Today's recovered: {todayRecovered}</p>
-                  <p>Active: {active}</p>
-                  <p>Critical: {critical}</p>
+                  <div className="covid-info">
+                    <div>
+                      <p>Today's Cases</p>
+                      <p>{todayCases}</p>
+                    </div>
+                    <div>
+                      <p>Total Cases</p>
+                      <p>{cases}</p>
+                    </div>
+                    <div>
+                      <p>Today's Deaths</p>
+                      <p>{todayDeaths}</p>
+                    </div>
+                    <div>
+                      <p>Total Deaths</p>
+                      <p>{deaths}</p>
+                    </div>
+                    <div>
+                      <p>Today's Recovered</p>
+                      <p>{todayRecovered}</p>
+                    </div>
+                    <div>
+                      <p>Total Recovered</p>
+                      <p>{recovered}</p>
+                    </div>
+                    <div>
+                      <p>Active</p>
+                      <p>{active}</p>
+                    </div>
+                    <div>
+                      <p>Critical</p>
+                      <p>{critical}</p>
+                    </div>
+                  </div>
                 </article>
               );
             })}
