@@ -30,7 +30,7 @@ const CountriesStats = () => {
       }
       setLoading(false);
     } catch (err) {
-      console.clear();
+      console.log(err);
       setLoading(false);
       setError(true);
     }

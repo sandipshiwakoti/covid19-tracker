@@ -1,6 +1,32 @@
 /* google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap");
 
+.light-theme {
+  --clr-bg: #fff;
+  --clr-font: #000;
+  --clr-box: #fff;
+  --clr-secondary: rgb(17, 23, 29);
+  --clr-search-bg: var(--clr-box);
+  --clr-info: #09aeae;
+  --clr-danger: #a8240a;
+  --clr-warning: #cca91b;
+  --clr-success: rgb(12, 99, 12);
+  --clr-mode: rgb(9, 12, 16);
+}
+
+.dark-theme {
+  --clr-bg: rgb(9, 12, 16);
+  --clr-font: rgb(240, 246, 252);
+  --clr-secondary: rgb(218, 231, 245);
+  --clr-box: #1d262b;
+  --clr-search-bg: var(--clr-box);
+  --clr-info: var(--clr-box);
+  --clr-danger: var(--clr-box);
+  --clr-warning: var(--clr-box);
+  --clr-success: var(--clr-box);
+  --clr-mode: rgb(46, 150, 43);
+}
+
 /* Resets */
 * {
   margin: 0;
@@ -11,11 +37,12 @@
 /* body */
 body {
   font-family: "Oswald", sans-serif;
+  background-color: var(--clr-bg);
 }
 
 /* Global styles */
 .section {
-  padding: 2rem 0;
+  padding: 4rem 0;
 }
 
 .section-center {
@@ -31,6 +58,7 @@ body {
   letter-spacing: 0.2rem;
   text-align: center;
   margin-bottom: 2rem;
+  color: var(--clr-font);
 }
 
 @media screen and (min-width: 568px) {
@@ -74,7 +102,7 @@ img {
   display: grid;
   place-items: center;
   gap: 1rem;
-  background-color: rgb(93, 47, 119);
+  /* background-color: rgb(93, 47, 119); */
   padding: 2rem;
   border-radius: 0.5rem;
   text-align: center;
@@ -99,19 +127,19 @@ img {
 }
 
 .world-card.info {
-  background-color: #09aeae;
+  background-color: var(--clr-info);
 }
 
 .world-card.danger {
-  background-color: #a8240a;
+  background-color: var(--clr-danger);
 }
 
 .world-card.warning {
-  background-color: #cca91b;
+  background-color: var(--clr-warning);
 }
 
 .world-card.success {
-  background-color: #1fae51;
+  background-color: var(--clr-success);
 }
 
 /* Responsive Design for WorldStats Component */
@@ -141,6 +169,9 @@ img {
   font-size: 1.2rem;
   text-transform: capitalize;
   font-weight: 500;
+  background-color: var(--clr-search-bg);
+  color: var(--clr-font);
+  border-color: var(--clr-search-bg);
 }
 
 .btn-search {
@@ -162,10 +193,10 @@ img {
 }
 
 .country-card {
-  background-color: white;
+  background-color: var(--clr-box);
   border-radius: 0.5rem;
   text-align: center;
-  color: black;
+  color: var(--clr-font);
   display: grid;
   gap: 0.5rem;
   padding: 1.5rem 0;
@@ -204,9 +235,49 @@ img {
 
 .covid-info > div > span {
   letter-spacing: 0.1rem;
-  color: #172020;
+  color: var(--clr-secondary);
 }
 
+.btn-toggle {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transition: all 0.1s linear;
+  outline: none;
+  background-color: var(--clr-mode);
+  border: 0.3rem solid var(--clr-mode);
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.mode-icon {
+  display: inline-block;
+  padding: 0.4rem;
+}
+
+.slider {
+  position: absolute;
+  top: 8%;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: white;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+}
+
+.slide {
+  left: 50%;
+}
+
+.light-mode-icon,
+.dark-mode-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
 /* Responsive Design for CountriesStats Component */
 @media screen and (min-width: 672px) {
   .countries-stats-center {

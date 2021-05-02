@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from "react";
 import NumberFormat from "react-number-format";
+import lightModeIcon from "../light-mode.png";
+import darkModeIcon from "../dark-mode.png";
 
 const url = "https://corona.lmao.ninja/v2/all";
+
+const getLocalStorageTheme = () => {
+  if (localStorage.getItem("theme")) return localStorage.getItem("theme");
+  return "light-theme";
+};
 
 const WorldStats = () => {
   const [stats, setStats] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [theme, setTheme] = useState(getLocalStorageTheme());
 
   const fetchStats = async () => {
     setLoading(true);
@@ -19,6 +27,7 @@ const WorldStats = () => {
       setLoading(false);
       setError(false);
     } catch (err) {
+      console.log(err);
       setLoading(false);
       setError(true);
     }
@@ -28,12 +37,39 @@ const WorldStats = () => {
     fetchStats();
   }, []);
 
+  useEffect(() => {
+    document.documentElement.className = theme;
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    if (theme === "light-theme") {
+      setTheme("dark-theme");
+    } else {
+      setTheme("light-theme");
+    }
+  };
   return (
     <section className="world-stats section">
       <div className="corona-img-container">
         <img src="corona.png" alt="corona" className="corona-img" />
       </div>
       <h1 className="section-title">COVID-19 Live Stats</h1>
+      <button className="btn-toggle" onClick={toggleTheme}>
+        <div className="mode-icon">
+          <img
+            src={lightModeIcon}
+            alt="light mode"
+            className="light-mode-icon"
+          />
+        </div>
+        <div className="mode-icon">
+          <img src={darkModeIcon} alt="dark mode" className="dark-mode-icon" />
+        </div>
+        <div
+          className={`${theme === "light-theme" ? "slider" : "slider slide"}`}
+        ></div>
+      </button>
       {loading && !error && (
         <div className="preloader-img-container">
           <img
